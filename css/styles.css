@@ -74,6 +74,7 @@ ul {
   text-decoration: none;
 }
 .link-list {
+  position: relative;
   color: var(--navy-blue);
   font-weight: 500;
   font-size: 16px;
@@ -112,6 +113,26 @@ ul {
 
 .logo-light {
   color: var(--cloud);
+}
+.link-list.current::after,
+.link-list:hover::after,
+.link-list:focus::after {
+  background-color: var(--ocean);
+}
+.link-list.current {
+  color: var(--ocean);
+}
+.link-list::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  margin-top: 20px;
 }
 
 /*HW3*/
@@ -203,7 +224,47 @@ ul {
   background-color: var(--ocean);
   border: 1px solid transparent;
 }
+.backdrop {
+  position: fixed;
 
+  background: rgba(46, 47, 66, 0.4);
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+}
+.modal {
+  position: absolute;
+
+  width: 408px;
+  height: 584px;
+  left: 516px;
+  top: 80px;
+  padding: 24px;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  background-color: var(--dairy);
+}
+.modal-btn {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  margin-left: auto;
+  width: 24px;
+  height: 24px;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 0%;
+  background-color: var(--cornflower);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  cursor: pointer;
+}
+.modal-icon {
+  fill: var(--navy-blue);
+}
 /*Section2*/
 .visually-hidden {
   position: absolute;
@@ -519,4 +580,29 @@ img {
 .portfolio-link:focus {
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+}
+.team-label {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: justify;
+  background-color: var(--iris);
+  color: var(--cloud);
+  font-family: var(--primary-font);
+  mix-blend-mode: normal;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+
+  bottom: 0;
+  left: 0;
+  padding-top: 40px;
+  padding-right: 32px;
+  padding-bottom: 164px;
+  padding-left: 32px;
+}
+.team-box {
+  position: relative;
 }
