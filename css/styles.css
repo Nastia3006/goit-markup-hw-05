@@ -239,12 +239,20 @@ ul {
   height: 100%;
   left: 0px;
   top: 0px;
+
+  opacity: 1;
+  visibility: visible;
+  pointer-events: initial;
+  transition: opacity var(--anim-fast), visibility var(--anim-fast);
 }
 .backdrop.is-hidden {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
+
+  transition-delay: 400ms;
 }
+
 .modal {
   position: absolute;
 
@@ -252,12 +260,20 @@ ul {
   height: 584px;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) rotate(0) scale(1);
+  opacity: 1;
+
   padding: 24px;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   background-color: var(--dairy);
+
+  transition: transform 400ms ease-in 250ms, opacity 400ms ease-in 250ms;
+}
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) rotate(360deg) scale(0.2);
+  opacity: 0;
 }
 .modal-btn {
   justify-content: center;
@@ -274,9 +290,19 @@ ul {
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
   cursor: pointer;
+  transition: background-color var(--anim-fast);
+}
+.modal-btn:hover,
+.modal-btn:focus {
+  background-color: var(--ocean);
 }
 .modal-icon {
   fill: var(--navy-blue);
+  transition: fill var(--anim-fast);
+}
+.modal-icon:hover,
+.modal-icon:focus {
+  fill: var(--white);
 }
 /*Section2*/
 .visually-hidden {
@@ -376,7 +402,6 @@ ul {
 .team {
   background-color: var(--cloud);
   padding: 120px 0;
-  margin-bottom: 120px;
 }
 .card {
   background-color: var(--white);
@@ -400,7 +425,6 @@ ul {
 }
 /*Section5*/
 .customers {
-  margin-bottom: 120px;
   padding: 120px 0;
 }
 .team-item-customers {
@@ -454,6 +478,7 @@ ul {
   align-items: start;
   flex-direction: column;
   gap: 120px;
+  margin-right: 120px;
 }
 .ftr-item {
   margin-bottom: 16px;
@@ -462,7 +487,6 @@ ul {
 .container-footer {
   display: flex;
   align-items: baseline;
-  gap: 120px;
 }
 .media {
   font-weight: 500;
@@ -521,7 +545,8 @@ img {
   justify-content: center;
 
   border: 1px solid var(--cornflower);
-  transition: background-color var(--anim-fast), color var(--anim-fast);
+  transition: background-color var(--anim-fast), color var(--anim-fast),
+    box-shadow var(--anim-fast), border var(--anim-fast);
 }
 .filter-btn:hover {
   background-color: var(--ocean);
@@ -589,9 +614,6 @@ img {
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
-.list-filter-shadow {
-  transition: box-shadow var(--anim-fast);
-}
 .list-filter-shadow:hover,
 .list-filter-shadow:focus {
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
