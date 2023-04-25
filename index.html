@@ -60,11 +60,13 @@
       <section class="hero-image overlay">
         <div class="container">
           <h1 class="hero-txt">Effective Solutions for Your Business</h1>
-          <button class="button-txt" type="button">Order Service</button>
+          <button class="button-txt" type="button" data-modal-open>
+            Order Service
+          </button>
         </div>
-        <div class="backdrop">
+        <div class="backdrop" data-modal>
           <div class="modal">
-            <button class="modal-btn" type="button">
+            <button class="modal-btn" type="button" data-modal-close>
               <svg class="modal-icon" width="8" height="8">
                 <use href="./images/icons.svg#icon-icon-close"></use>
               </svg>
@@ -553,5 +555,6 @@
         </div>
       </div>
     </footer>
+    <script src="./js/modal.js"></script>
   </body>
 </html>
