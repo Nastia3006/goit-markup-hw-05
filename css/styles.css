@@ -300,10 +300,7 @@ ul {
 .modal-icon {
   fill: currentColor;
 }
-.modal-icon:hover,
-.modal-icon:focus {
-  fill: var(--white);
-}
+
 /*Section2*/
 .visually-hidden {
   position: absolute;
