@@ -295,7 +295,7 @@ ul {
 .modal-btn:hover,
 .modal-btn:focus {
   background-color: var(--ocean);
-  color: var(--white);
+  fill: var(--white);
 }
 .modal-icon {
   fill: currentColor;
