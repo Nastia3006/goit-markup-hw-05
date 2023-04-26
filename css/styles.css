@@ -297,9 +297,7 @@ ul {
   background-color: var(--ocean);
   fill:#ffffff;
 }
-.modal-icon {
-  fill: currentColor;
-}
+
 
 /*Section2*/
 .visually-hidden {
