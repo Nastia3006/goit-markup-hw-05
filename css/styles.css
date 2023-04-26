@@ -298,7 +298,6 @@ ul {
 }
 .modal-icon {
   fill: var(--navy-blue);
-  transition: fill var(--anim-fast);
 }
 .modal-icon:hover,
 .modal-icon:focus {
